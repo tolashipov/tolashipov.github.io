@@ -1,0 +1,144 @@
+#main-container {
+    width: 400px;
+    position: relative;
+    margin: 0 auto;
+    background-color: white;
+}
+#loading-animation{
+    height: 200px;
+width: 150px;
+    position: relative;
+    left: calc(35% - 75px);
+    background-image: url('./images/1980184.svg');
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+#loading-animation > p {
+    color: white;
+    position: relative;
+    left: 60px;
+    bottom: 20px;
+}
+#loading-animation > .loading-white-circle {
+    height: 10px;
+    width: 10px;
+    color: black;
+    border: 10px dotted white;
+    position:relative;
+    animation: rotate ease-in-out 6s infinite;
+}
+#loading-animation > .loading-white-circle.first {
+    left: 70px;
+    top: 12px;
+}
+#loading-animation > .loading-white-circle.second {
+    left: 40px;
+    bottom: 9px; 
+}
+@keyframes rotate {
+    100% {transform: rotate(2880deg);}
+}
+
+.movie-tab {
+    width: 100%;
+    box-sizing: border-box;
+    height: auto;
+    position: relative;
+    border-bottom: 1px solid grey;
+    color: white;
+    background-color: rgb(39, 39, 39);
+    display: flex;
+}
+.movie-tab > .movie-title{
+    width: 340px;
+    padding-left: 20px;
+    box-sizing: border-box;
+    display: inline-block;
+    cursor: pointer;
+}
+.plus {
+    height: 49.5px;
+    width: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: black;
+    position: absolute;
+    right: 0;
+}
+.plus > div {
+    background-image: url('./images/add.svg');
+    height: 24px;
+    width: 24px;
+}
+.movie-tab:nth-child(even){
+    background-color: rgb(58, 58, 58);
+}
+.movie-tab > img {
+    height: 100%;
+    width: auto;
+    position: absolute;
+    right: 0;
+    top:0;
+}
+#snackbar {
+    visibility: hidden;
+    background-color: white;
+    color: #333;
+    text-align: center;
+    border-radius: 2px;
+    padding: 16px;
+    position: fixed;
+    z-index: 1;
+    left: 30%;
+    top: 30px;
+    font-size: 17px;
+}
+
+#snackbar.show {
+    visibility: visible;
+    -webkit-animation: fadein 0.5s, fadeout 0.5s 2.5s;
+    animation: fadein 0.5s, fadeout 0.5s 2.5s;
+}
+
+@-webkit-keyframes fadein {
+    from {top: 0; opacity: 0;} 
+    to {top: 30px; opacity: 1;}
+}
+
+@keyframes fadein {
+    from {top: 0; opacity: 0;}
+    to {top: 30px; opacity: 1;}
+}
+
+@-webkit-keyframes fadeout {
+    from {top: 30px; opacity: 1;} 
+    to {top: 0; opacity: 0;}
+}
+
+@keyframes fadeout {
+    from {top: 30px; opacity: 1;}
+    to {top: 0; opacity: 0;}
+}
+.movie-page{
+    background-color: #333;
+    color: white;
+    height: 100vh;
+    width: 100%;
+    position: relative;
+}
+.movie-name {
+    width: 100%;
+    text-align: center;
+    font-size: 24px;
+    padding-top: 10px;
+}
+.movie-img {
+    position: relative;
+    margin: 0 100px;
+    width: 200px;
+    height: auto;
+}
+.movie-rating, .movie-release, .movie-genres {
+    text-align: center;
+}
